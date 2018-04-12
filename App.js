@@ -12,6 +12,7 @@ export default class App extends React.Component {
             pastScrollRange={10}
             markedDates={getRosterForWeeks(60)}
             markingType={'period'}
+            minDate={'2018-01-01'}
         />
       </View>
     );

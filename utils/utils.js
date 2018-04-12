@@ -4,11 +4,13 @@ import * as R from 'ramda';
 const morning = {
   marked: true,
   color: '#FFC752',
+  textColor: 'white',
 };
 
 const evening = {
   marked: true,
   color: '#00A3F4',
+  textColor: 'white',
 };
 
 const off = {
@@ -35,8 +37,16 @@ const FORMAT = 'YYYY-MM-DD';
 
 const getDuty = (dateTime) => {
   const dayInRoster = Math.floor((dateTime - START_DATE) / DAY) % 21;
+  const today = new Date().getTime();
+  const key = format(dateTime, FORMAT);
+  const value = roster[dayInRoster];
+  if (format(today, FORMAT) === key) {
+    return {
+      [key]: R.merge(value, {textColor: 'white'})
+    }
+  }
   return {
-    [format(dateTime, FORMAT)]: roster[dayInRoster]
+    [key]: value
   };
 };
 
