@@ -10,9 +10,9 @@ export default class App extends React.Component {
       <View>
         <CalendarList
             pastScrollRange={10}
-            markedDates={getRosterForWeeks(60)}
+            markedDates={getRosterForWeeks(100)}
             markingType={'period'}
-            minDate={'2018-01-01'}
+            minDate={'2019-12-16'}
         />
       </View>
     );

@@ -1,15 +1,15 @@
 import {format} from 'date-fns';
 import * as R from 'ramda';
 
-const morning = {
+const short = {
   marked: true,
   color: '#FFC752',
   textColor: 'white',
 };
 
-const evening = {
+const long = {
   marked: true,
-  color: '#00A3F4',
+  color: '#eb8f34',
   textColor: 'white',
 };
 
@@ -26,12 +26,12 @@ const endingDay = {
 };
 
 const roster = [
-  R.merge(morning, startingDay), morning, morning, R.merge(morning, endingDay), off, off, R.merge(evening, startingDay),
-  evening, R.merge(evening, endingDay), off, off, R.merge(morning, startingDay), morning, R.merge(morning, endingDay),
-  off, R.merge(morning, startingDay), R.merge(morning, endingDay), R.merge(evening, startingDay), R.merge(evening, endingDay), off, off,
+  R.merge(short, endingDay), off, off, R.merge(short, startingDay), short, short, R.merge(short, endingDay),
+  off, R.merge(long, startingDay), long, long, R.merge(long, endingDay), off, off,
+  R.merge(short, startingDay), short, R.merge(short, endingDay), off, off, R.merge(short, startingDay), short,
 ];
 
-const START_DATE = 1514728800000;
+const START_DATE = 1576414800000;
 const DAY = 24 * 3600 * 1000;
 const FORMAT = 'YYYY-MM-DD';
 
@@ -42,7 +42,7 @@ const getDuty = (dateTime) => {
   const value = roster[dayInRoster];
   if (format(today, FORMAT) === key) {
     return {
-      [key]: R.merge(value, {textColor: 'white'})
+      [key]: R.merge(value, {textColor: 'red'})
     }
   }
   return {

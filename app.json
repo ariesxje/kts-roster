@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "kts-roster",
-    "description": "This project is really great.",
+    "name": "KTs roster",
+    "description": "This project is for Katie with love.",
     "slug": "kts-roster",
     "privacy": "unlisted",
-    "sdkVersion": "26.0.0",
-    "platforms": ["ios", "android"],
+    "sdkVersion": "33.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +24,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.kylex.kts-roster",
       "supportsTablet": true
     }
   }
