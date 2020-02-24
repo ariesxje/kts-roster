@@ -31,12 +31,12 @@ const roster = [
   R.merge(short, startingDay), short, R.merge(short, endingDay), off, off, R.merge(short, startingDay), short,
 ];
 
-const START_DATE = 1576414800000;
+const START_DATE = 1576418400000;
 const DAY = 24 * 3600 * 1000;
 const FORMAT = 'YYYY-MM-DD';
 
 const getDuty = (dateTime) => {
-  const dayInRoster = Math.floor((dateTime - START_DATE) / DAY) % 21;
+  const dayInRoster = Math.floor((dateTime - START_DATE) / DAY) % roster.length;
   const today = new Date().getTime();
   const key = format(dateTime, FORMAT);
   const value = roster[dayInRoster];
